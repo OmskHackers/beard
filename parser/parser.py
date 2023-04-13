@@ -2,8 +2,9 @@
 
 from datetime import datetime
 from requestium import Session as Sess
-from webdriver_manager.chrome import ChromeDriverManager
+from selenium import webdriver
 from webdriver_manager.utils import ChromeType
+from webdriver_manager.chrome import ChromeDriverManager
 from pymongo import MongoClient
 from bson.objectid import ObjectId
 import asyncio

@@ -2,6 +2,7 @@ import websockets
 import threading
 import asyncio
 import json
+import logging
 
 CLIENTS = set()
 
@@ -28,7 +29,7 @@ async def main():
 
 
 async def updated(info='', team_info=''):
-    async with websockets.connect('ws://127.0.0.1:9090') as websocket:
+    async with websockets.connect('ws://parser:9090') as websocket:
         if team_info.get('_id'):
             del(team_info['_id'])
         if info.get('_id'):

@@ -35,10 +35,13 @@ class AD(object):
         logging.critical("Нет команды с IP {ip}".format(ip=ip))
 
     def get_info_by_name(self, name):
+        #logging.critical("Team {}".format(name))
         for team in info:
+            logging.critical("team_name {}".format(team["name"]))
+            logging.critical("name {}".format(name))
             if team['name'] == name:
                 return team
-        logging.critical("Нет команды с названием {}".format(name))
+        logging.critical("[get-info]Нет команды с названием {}".format(name))
 
     def dump(self):
         return info
@@ -53,7 +56,7 @@ class AD(object):
         for team in delta:
             if team['name'] == name:
                 return team
-        logging.critical("Нет команды с названием {name}".format(name=name))
+        logging.critical("[delta]Нет команды с названием {name}".format(name=name))
 
     def refresh(self, driver):
         global info
